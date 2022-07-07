@@ -1,0 +1,31 @@
+<!-- <div *ngFor="let forecast of forecastArray">
+    <span>Temperatura: {{forecast.temperature}}°C</span>
+    <span> Data: {{forecast.date | date: 'medium'}}</span>
+</div> -->
+
+<table>
+    <tr>
+        <th>Data</th>
+        <th>Temperatura (°C)</th>
+        <th>Umidità </th>
+        <th>Pioggia</th>
+        <th>Pressione</th>
+        <th>Nuvolosità</th>
+        <th>Direzione vento</th>
+        <th>Velocità vento</th>
+    </tr>
+    <tr *ngFor="let forecast of forecastArray">
+        <td>{{forecast.date | date: 'medium'}}</td>
+        <td>{{forecast.temperature}}</td>
+        <td>{{forecast.humidity}}</td>
+        <td>{{forecast.rain}}</td>
+        <td>{{forecast.pressure}}</td>
+        <td>{{forecast.cloudCover}}</td>
+        <td>{{forecast.windDirection}}</td>
+        <td>{{forecast.windSpeed}}</td>
+        <td class="icon">
+            <img src="{{forecast.code | code}}" alt="">
+        </td>
+
+    </tr>
+</table>
